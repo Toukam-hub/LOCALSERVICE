@@ -1,0 +1,106 @@
+/* footer.component.css */
+.footer {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.links a,
+.social-media a {
+  font-size: 2.5rem;
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.links a:hover,
+.social-media a:hover {
+  text-decoration: underline;
+  font-size: 2.7rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom {
+  font-size: 2.5rem;
+}
+
+.contact {
+  font-size: 1.8rem;
+  color: white;
+  border-radius: 8px; /* Coins arrondis */
+  padding: 20px; /* Espacement intérieur */
+  margin: 20px; /* Espacement extérieur */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.contact h3 {
+  font-size: 24px; /* Taille de la police du titre */
+  margin-bottom: 15px; /* Espacement en bas du titre */
+}
+
+.contact span {
+  display: block; /* Chaque numéro sur une nouvelle ligne */
+  font-size: 18px; /* Taille de la police des numéros */
+  margin-bottom: 10px; /* Espacement entre les numéros */
+}
+
+.contact span.cameroun {
+  font-weight: bold; /* Mettre le numéro du Cameroun en gras */
+}
+
+.contact span.cote-ivoire {
+  font-weight: bold; /* Mettre le numéro de la Côte d'Ivoire en gras */
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 1000px) {
+  .social-media{
+    width: 100%;
+    margin-right: 20px;
+  }
+
+  .links a,
+  .social-media a {
+    font-size: 25px;
+  }
+
+  .links a:hover,
+  .social-media a:hover {
+    text-decoration: underline;
+    font-size:1.8rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .contact {
+    padding: 5px;
+  }
+
+  .footer{
+    padding: 2px;
+  }
+
+  .footer-content {
+    padding-left: 0px;
+    padding-right: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  .footer-bottom {
+    font-size: 1.4rem;
+  }
+}
+

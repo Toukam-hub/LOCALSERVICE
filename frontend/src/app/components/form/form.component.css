@@ -1,0 +1,33 @@
+.mat-toolbar{
+  width: auto;
+  margin-bottom: 10px;
+  background-color: rgba(64, 168, 164, 0.9);
+  color: rgb(255, 255, 255);
+}
+
+mat-toolbar-row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mat-dialog-close:hover{
+  background-color: red;
+}
+
+.mat-typography, .action,.btn{
+  background-color: white;
+}
+
+.send{
+  color: rgba(2, 124, 119, 0.9);
+}
+
+.close{
+  color: red;
+}
+
+.error{
+  color: red;
+}

@@ -1,0 +1,19 @@
+h1{
+  background-color: rgba(64, 168, 164, 0.9);
+  color: #f1f5f3;
+  padding: 16px;
+  margin-bottom: 5px;
+}
+
+/* Style pour le contenu de la boîte de dialogue */
+.modal-content {
+  font-size: 19px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-bottom: 5px solid black;
+}
+
+.modal-action{
+  background-color: rgba(64, 168, 164, 0.9);
+}
+

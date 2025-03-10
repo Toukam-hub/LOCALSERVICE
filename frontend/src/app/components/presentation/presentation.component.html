@@ -1,0 +1,106 @@
+<div class="app-container">
+  <header class="header">
+    <div class="header-top">
+      <div class="header-left">
+        <img src="assets/images/apple-touch-icon.png" alt="logo" class="logo">
+      </div>
+      <div class="header-title">
+        <h2 style="font-weight: bold;font-style: italic;">Sécurité Automobile</h2>
+      </div>
+      <div class="header-right">
+        <button class="menu-toggle">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <ul>
+          <li><a href="#section1">Sécurité Auto</a></li>
+          <li><a href="#section2">Réparation Mécatronique</a></li>
+          <li><a href="#temoignage">Témoignages</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <app-animated-text></app-animated-text>
+    </div>
+  </header>
+  <div class="main-content">
+    <section class="content" id="section1">
+      <div class="securite-video">
+        <video class="full-width-video" controls>
+          <source src="assets/videos/1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="btn1">
+        <button (click)="handleForm()" class="btn btn-success">Sécuriser mon Engin</button>
+      </div>
+    </section>
+
+    <section class="content" id="section2">
+      <app-introduction></app-introduction>
+    </section>
+
+    <section class="content gps-tracking" id="section3">
+      <h2 class="section-title">Avec nos traceurs GPS, profitez de :</h2>
+      <ul class="features-list">
+        <li>Localisation en temps réel, 24h/24 et 7j/7.</li>
+        <li>Arrêt à distance du moteur en cas de vol.</li>
+        <li>Historique détaillé des trajets pour un suivi précis.</li>
+        <li>Définition de zones de sécurité et alertes en cas de sortie.</li>
+        <li>Assistance 24h/24 grâce à notre salle de contrôle dédiée.</li>
+      </ul>
+
+      <h2 class="section-title">Nos Tarifs</h2>
+      <p class="pricing-info">Nos tarifs sont les plus compétitifs, profitez du meilleur rapport qualité-prix :</p>
+      <ul class="pricing-list">
+        <li><strong>Moto :</strong> 34 900 FCFA</li>
+        <li><strong>Voiture :</strong> 39 900 FCFA</li>
+        <li><strong>Camion :</strong> 54 900 FCFA</li>
+        <li><strong>Engins et flottes :</strong> Devis personnalisé sur demande.</li>
+      </ul>
+
+      <h2 class="section-title bonus-title">BONUS :</h2>
+      <ul class="bonus-list">
+        <li>Garantie : 06 mois</li>
+        <li>Abonnement à la plateforme GRATUIT pendant 5 ans !</li>
+        <li>Installation professionnelle, rapide et discrète OFFERTE (à domicile, sur votre lieu de travail ou dans nos
+          agences).
+        </li>
+        <li>Formation gratuite sur l'utilisation de la plateforme et de l'application mobile.</li>
+      </ul>
+    </section>
+
+    <section class="content" id="section4">
+      <div class="titl">
+        <h1>C'est une offre valable cette semaine iniquement.</h1>
+      </div>
+      <div class="titl">
+        <h2>Elle expire dans Exactement :</h2>
+      </div>
+      <app-countdown></app-countdown>
+    </section>
+
+    <section class="modal-content faq-container" id="section5">
+      <h2>FAQ (Questions Qui Reviennent Souvent)</h2>
+
+      <div *ngFor="let faq of faqs; let i = index" class="faq-item" (click)="toggleAnswer(i)">
+        <h3 class="faq-question">{{ faq.question }}</h3>
+        <div class="faq-answer" *ngIf="activeIndex === i">
+          <ul>
+            <li *ngFor="let answer of faq.answer">{{ answer }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="temoignage">
+      <h2 class="titre-temoignages">Ce que pensent nos clients</h2>
+
+      <app-temoignage></app-temoignage>
+    </section>
+
+  </div>
+
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</div>

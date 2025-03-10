@@ -1,0 +1,10 @@
+<h1 mat-dialog-title fxLayoutAlign="center center">{{ title }}</h1>
+<div mat-dialog-content class="modal-content">
+  <div *ngFor="let section of content">
+    <h2>{{ section.heading }}</h2>
+    <p>{{ section.text }}</p>
+  </div>
+</div>
+<div mat-dialog-actions class="modal-action">
+  <button mat-button class="btn btn-primary" (click)="close()">Fermer</button>
+</div>

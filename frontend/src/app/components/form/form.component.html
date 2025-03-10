@@ -1,0 +1,67 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row fxLayout="row">
+    <span>Sécurité Automobile</span>
+    <button class="mat-dialog-close" mat-button mat-dialog-close>
+      <mat-icon class="btn-close-white">close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form">
+    <div fxFlex fxLayout="column">
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Contact</mat-label>
+        <input matInput formControlName="contact" required #focusElement>
+        <mat-error *ngIf="form.controls.contact.touched && form.controls.contact.invalid">
+          <span class="error" *ngIf="form.controls.contact.errors?.required">Ce champ est obligatoire.</span>
+          <span class="error" *ngIf="form.controls.contact.errors?.pattern">Seuls les chiffres sont acceptés</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Ville et quartier </mat-label>
+        <input matInput formControlName="ville" required>
+        <mat-error *ngIf="form.controls.ville.touched && form.controls.ville.invalid">
+          <span class="error" *ngIf="form.controls.ville.errors?.required">Ce champ est obligatoire.</span>
+          <span class="error" *ngIf="form.controls.ville.errors?.pattern">Ce champ est invalide.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex>
+        <mat-label>Jour d'installation</mat-label>
+        <mat-select formControlName="jour" required>
+          <mat-option *ngFor="let jour of joursAffiches" [value]="jour" [disabled]="isDisabled()">
+            {{ jour }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.controls.jour.touched && form.controls.jour.invalid">
+          <span class="error" *ngIf="form.controls.jour.errors?.required">Ce champ est obligatoire.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nature de l'Engin</mat-label>
+        <mat-select formControlName="type">
+          <mat-option value="" disabled>Sélectionnez un type</mat-option>
+          <mat-option value="moto">Moto</mat-option>
+          <mat-option value="voiture">Voiture</mat-option>
+          <mat-option value="camion">Camion</mat-option>
+          <mat-option value="Autre">Autre</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="action">
+  <button class="btn send" mat-raised-button type="submit" (click)="handleSubmit()"
+          [disabled]="!(form.valid && form.dirty)">
+    Send
+  </button>
+
+  <button class="btn close" mat-button mat-dialog-close>
+    Close
+  </button>
+</mat-dialog-actions>

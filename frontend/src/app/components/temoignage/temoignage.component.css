@@ -1,0 +1,19 @@
+.carousel {
+  width: 100%;
+  max-width: 400px; /* Ajuste selon le besoin */
+  margin: auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1 !important;
+}

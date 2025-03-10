@@ -1,0 +1,26 @@
+/* countdown.component.css */
+.countdown {
+  width: 110%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
+}
+
+.time-box {
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 1000px) {
+  .countdown {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4rem;
+    gap: 10px;
+  }
+}
