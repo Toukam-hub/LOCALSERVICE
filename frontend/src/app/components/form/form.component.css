@@ -31,3 +31,20 @@ mat-toolbar-row{
 .error{
   color: red;
 }
+
+.selection-item {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacement entre les éléments */
+}
+
+.selection-item .plus{
+  color: green;
+  font-size: 1rem;
+}
+
+.selection-item .moins{
+  color: red;
+  font-size: 1.5rem;
+}

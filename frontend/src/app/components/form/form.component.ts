@@ -9,7 +9,7 @@ import {NgxUiLoaderService} from 'ngx-ui-loader';
 import {GlobalConstantes} from '../../content/global-constantes';
 import {MatError, MatFormField, MatLabel} from '@angular/material/form-field';
 import {MatInput} from '@angular/material/input';
-import {MatOption, MatSelect} from '@angular/material/select';
+import {MatOption, MatSelect, MatSelectChange} from '@angular/material/select';
 import {NgForOf, NgIf} from '@angular/common';
 import {SendEmailService} from '../../service/send-email.service';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -41,6 +41,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 })
 export class FormComponent implements OnInit {
 
+  options = ['Moto', 'Voiture', 'Camion', 'Autre'];
+  selectedOptions: { name: string, quantity: number }[] = [];
   form: any = FormGroup;
   joursDeLaSemaine: string[] = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
   joursAffiches: string[] = [];
@@ -58,8 +60,7 @@ export class FormComponent implements OnInit {
       {
         contact: [null, [Validators.required, Validators.pattern(GlobalConstantes.contactNumberRegex)]],
         ville: [null, [Validators.required]],
-        jour: ['', Validators.required],
-        type: [null, [Validators.required]]
+        jour: ['', Validators.required]
       }
     );
 
@@ -99,6 +100,30 @@ export class FormComponent implements OnInit {
   }
 
 
+  addSelection(event: MatSelectChange) {
+    const selectedName = event.value;
+
+    const existingItem = this.selectedOptions.find(item => item.name === selectedName);
+
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      this.selectedOptions.push({ name: selectedName, quantity: 1 });
+    }
+  }
+
+  increaseQuantity(index: number) {
+    this.selectedOptions[index].quantity++; // Augmente la quantité
+  }
+
+  decreaseQuantity(index: number) {
+    if (this.selectedOptions[index].quantity > 1) {
+      this.selectedOptions[index].quantity--;
+    } else {
+      this.selectedOptions.splice(index, 1);
+    }
+  }
+
   handleSubmit() {
     if (this.form.valid) {
       this.ngxService.start();
@@ -108,7 +133,7 @@ export class FormComponent implements OnInit {
         contact: formsDate.contact,
         ville: formsDate.ville,
         date: formsDate.jour,
-        type: formsDate.type
+        type:JSON.stringify(this.selectedOptions)
       }
 
       const text = `

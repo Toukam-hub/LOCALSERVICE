@@ -43,14 +43,21 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Nature de l'Engin</mat-label>
-        <mat-select formControlName="type">
-          <mat-option value="" disabled>Sélectionnez un type</mat-option>
-          <mat-option value="moto">Moto</mat-option>
-          <mat-option value="voiture">Voiture</mat-option>
-          <mat-option value="camion">Camion</mat-option>
-          <mat-option value="Autre">Autre</mat-option>
+        <mat-select (selectionChange)="addSelection($event)" #select>
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{ option }}
+          </mat-option>
         </mat-select>
       </mat-form-field>
+
+
+      <!-- Affichage des sélections -->
+      <div *ngFor="let item of selectedOptions; let i = index " class="selection-item">
+        <span>{{ item.name }} ({{ item.quantity }})</span>
+        <button mat-button color="primary" class="btn plus" (click)="increaseQuantity(i)">+</button>
+        <button mat-button color="warn" class="btn moins" (click)="decreaseQuantity(i)">-</button>
+      </div>
+
     </div>
   </form>
 </mat-dialog-content>

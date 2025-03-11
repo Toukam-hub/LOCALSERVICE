@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build --configuration=production
 
 # Étape 2 : Servir l'application avec Nginx
-FROM nginx:1.23
+FROM nginx:latest
 COPY --from=build /app/dist/* /usr/share/nginx/html
 
 # Exposer le port 80 pour accéder à l’application

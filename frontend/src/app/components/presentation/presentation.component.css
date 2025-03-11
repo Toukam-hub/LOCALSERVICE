@@ -285,6 +285,11 @@
   margin: 10px 0;
 }
 
+.pricing-list li span{
+  text-decoration: line-through;
+  color: red;
+}
+
 .pricing-info {
   font-size: 1.2em;
   font-weight: bold;
