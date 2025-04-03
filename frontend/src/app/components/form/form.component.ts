@@ -94,8 +94,10 @@ export class FormComponent implements OnInit {
   }
 
   openWhatsApp(message: string) {
+    console.log("envoie de message wattsap")
     const phoneNumber = '653900250';
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    console.log("URL WhatsApp générée :", url);
     window.open(url, '_blank');
   }
 
@@ -149,7 +151,7 @@ export class FormComponent implements OnInit {
             this.ngxService.stop();
             this.dialogRef.close();
             this.openWhatsApp(text);
-            console.log(res);
+            console.log("reponse lors de l'envoie des infos",res);
           },
           error: err => {
             this.ngxService.stop();

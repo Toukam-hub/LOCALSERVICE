@@ -1,3 +1,10 @@
 #animatedText{
   color:blue;
 }
+
+@media (max-width: 500px) {
+  #animatedText{
+    font-size: 01rem;
+  }
+
+}

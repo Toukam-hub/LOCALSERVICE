@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40d19b7e-1235-4bf9-a317-3317347a02f9" name="Changes" comment="docker file" />
+    <list default="true" id="40d19b7e-1235-4bf9-a317-3317347a02f9" name="Changes" comment="docker file">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local-service-api" beforeDir="false" afterPath="$PROJECT_DIR$/local-service-api" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local-service-api/src/main/java/com/gestion/localserviceapi/controller/SendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-service-api/src/main/java/com/gestion/localserviceapi/controller/SendController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local-service-api/src/main/java/com/gestion/localserviceapi/resource/ResourceEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-service-api/src/main/java/com/gestion/localserviceapi/resource/ResourceEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local-service-api/src/main/java/com/gestion/localserviceapi/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/local-service-api/src/main/java/com/gestion/localserviceapi/service/EmailService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "vrai",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Neambo/Documents/dev/local-service/src",
     "node.js.detected.package.eslint": "true",
@@ -130,6 +136,7 @@
       <workItem from="1741868757946" duration="373000" />
       <workItem from="1741936161590" duration="627000" />
       <workItem from="1743071035576" duration="951000" />
+      <workItem from="1743161106170" duration="700000" />
     </task>
     <task id="LOCAL-00001" summary="docker file">
       <option name="closed" value="true" />

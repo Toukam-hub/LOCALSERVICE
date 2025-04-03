@@ -24,8 +24,8 @@
   </header>
   <div class="main-content">
     <section class="content" id="section1">
-      <div class="securite-video">
-        <video class="full-width-video" controls>
+      <div class="securite-video video-container">
+        <video #videoPlayer class="full-width-video video-frame" controls autoplay muted playsinline>
           <source src="assets/videos/1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -71,12 +71,15 @@
 
     <section class="content" id="section4">
       <div class="titl">
-        <h1>C'est une offre valable cette semaine iniquement.</h1>
+        <h1>C'est une offre valable cette semaine uniquement.</h1>
       </div>
       <div class="titl">
         <h2>Elle expire dans Exactement :</h2>
       </div>
-      <app-countdown></app-countdown>
+      <div class="countDown">
+        <app-countdown></app-countdown>
+      </div>
+
     </section>
 
     <section class="modal-content faq-container" id="section5">
@@ -94,7 +97,6 @@
 
     <section class="content" id="temoignage">
       <h2 class="titre-temoignages">Ce que pensent nos clients</h2>
-
       <app-temoignage></app-temoignage>
     </section>
 

@@ -24,3 +24,16 @@
     gap: 10px;
   }
 }
+
+@media (max-width: 600px) {
+  .countdown {
+    font-size: 01rem;
+    padding: 0;
+  }
+
+  .time-box {
+    padding: 4px;
+    border: 5px solid #007bff;
+  }
+
+}

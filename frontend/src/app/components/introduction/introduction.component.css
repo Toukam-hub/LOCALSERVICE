@@ -64,3 +64,10 @@
     font-size: 1em;
   }
 }
+
+@media (max-width: 600px) {
+  #background-section{
+    font-size: 0.99rem;
+  }
+
+}
