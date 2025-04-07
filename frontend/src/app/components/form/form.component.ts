@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatToolbar} from '@angular/material/toolbar';
 import {MatIcon} from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatButton} from '@angular/material/button';
 import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef} from '@angular/material/dialog';
 import {FlexLayoutModule} from '@ngbracket/ngx-layout';
@@ -51,7 +52,8 @@ export class FormComponent implements OnInit {
     private readonly formBuilder: FormBuilder,
     private readonly dialogRef: MatDialogRef<FormComponent>,
     private readonly ngxService: NgxUiLoaderService,
-    private readonly emailService: SendEmailService
+    private readonly emailService: SendEmailService,
+    private readonly snackBar :MatSnackBar
   ) {
   }
 
@@ -109,7 +111,13 @@ export class FormComponent implements OnInit {
     window.open(url, '_blank');
   }
 
-
+  showSnackbar(message:string) {
+    this.snackBar.open(message, 'Fermer', {
+      duration: 3000, // en ms (ici 3s)
+      verticalPosition: 'top', // ou 'bottom'
+      horizontalPosition: 'center' // 'start', 'center', 'end', 'left', 'right'
+    });
+  }
   addSelection(event: MatSelectChange) {
     const selectedName = event.value;
 
@@ -159,11 +167,13 @@ export class FormComponent implements OnInit {
             this.ngxService.stop();
             this.dialogRef.close();
             this.openWhatsApp(text);
+            this.showSnackbar("Informations envoyées avec succès ✅");
             console.log("reponse lors de l'envoie des infos",res);
           },
           error: err => {
             this.ngxService.stop();
             this.dialogRef.close();
+            this.showSnackbar("échec lors de l'envoi des informations  ❌");
             console.log(err);
           }
         }
