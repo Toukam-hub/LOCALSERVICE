@@ -32,7 +32,7 @@
       <mat-form-field appearance="fill" fxFlex>
         <mat-label>Jour d'installation</mat-label>
         <mat-select formControlName="jour" required>
-          <mat-option *ngFor="let jour of joursAffiches" [value]="jour" [disabled]="isDisabled()">
+          <mat-option *ngFor="let jour of joursAffiches" [value]="jour">
             {{ jour }}
           </mat-option>
         </mat-select>

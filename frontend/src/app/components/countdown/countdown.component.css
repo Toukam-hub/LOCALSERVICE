@@ -6,8 +6,12 @@
   font-size: 2rem;
 }
 
+.value, .label{
+  color: red;
+}
+
 .time-box {
-  border: 2px solid #007bff;
+  border: 2px solid #2626ff;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
@@ -20,20 +24,20 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
     gap: 10px;
   }
 }
 
 @media (max-width: 600px) {
   .countdown {
-    font-size: 01rem;
+    font-size: clamp(1rem, 2.5vw, 2rem);
     padding: 0;
   }
 
   .time-box {
     padding: 2px;
-    border: 5px solid #007bff;
+    border: 5px solid #2626ff;
   }
 
 }

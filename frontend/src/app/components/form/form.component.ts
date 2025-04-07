@@ -68,13 +68,28 @@ export class FormComponent implements OnInit {
     this.setJourParDefaut();
   }
 
+  //affiche les jour de la semaine en commencant pour la journée actuelle
   setJoursAffiches() {
-    const date = new Date();
-    const jourActuel = date.toLocaleDateString('fr-FR', {weekday: 'long'});
-    const jourCapitalized = jourActuel.charAt(0).toUpperCase() + jourActuel.slice(1);
+    const maintenant = new Date();
+    const heure = maintenant.getHours();
+
+    let jourActuel = maintenant.toLocaleDateString('fr-FR', { weekday: 'long' });
+    let jourCapitalized = jourActuel.charAt(0).toUpperCase() + jourActuel.slice(1);
+
+    // Si l'heure est >= 17h, on passe au jour suivant
+    if (heure >= 17) {
+      const indexJour = this.joursDeLaSemaine.indexOf(jourCapitalized);
+      const indexJourSuivant = (indexJour + 1) % this.joursDeLaSemaine.length;
+      jourCapitalized = this.joursDeLaSemaine[indexJourSuivant];
+    }
+
     const indexJourActuel = this.joursDeLaSemaine.indexOf(jourCapitalized);
-    this.joursAffiches = [...this.joursDeLaSemaine.slice(indexJourActuel), ...this.joursDeLaSemaine.slice(0, indexJourActuel)];
+    this.joursAffiches = [
+      ...this.joursDeLaSemaine.slice(indexJourActuel),
+      ...this.joursDeLaSemaine.slice(0, indexJourActuel)
+    ];
   }
+
 
   setJourParDefaut() {
     const date = new Date();
@@ -84,13 +99,6 @@ export class FormComponent implements OnInit {
     );
     const indexAujourdui = this.joursAffiches.indexOf("Aujourd'hui");
     this.form.controls.jour.setValue(this.joursAffiches[indexAujourdui]);
-    console.log(jourActuel);
-  }
-
-  isDisabled(): boolean {
-    const date = new Date();
-    const heure = date.getHours();
-    return heure >= 17;
   }
 
   openWhatsApp(message: string) {
