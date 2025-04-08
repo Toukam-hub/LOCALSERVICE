@@ -63,6 +63,15 @@
   font-weight: bold; /* Mettre le numéro de la Côte d'Ivoire en gras */
 }
 
+/**wattsap fixe*/
+.fixe-bouton{
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
 /* Styles pour les petits écrans */
 @media (max-width: 1000px) {
   .social-media{
@@ -104,3 +113,12 @@
   }
 }
 
+@media (max-width:600px) {
+  .custom-wat{
+    color: #08fa08;
+  }
+
+  .fixe-bouton{
+    left: 2px;
+  }
+}
